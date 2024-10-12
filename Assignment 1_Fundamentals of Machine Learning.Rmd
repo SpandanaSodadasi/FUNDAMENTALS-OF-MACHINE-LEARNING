@@ -1,0 +1,66 @@
+---
+title: "Assignment 1_FML"
+author: "Spandana Sodadasi"
+date: "2023-09-08"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=TRUE}
+knitr::opts_chunk$set(echo = TRUE, comment = NULL)
+```
+
+
+Source: https://github.com/KSU-MSBA/64060/blob/master/FlightDelays.csv
+
+```{r}
+setwd("C:/Users/spand/Downloads/")
+data <- read.csv("FlightDelays.csv")
+
+View(data)
+
+```
+
+```{r}
+setwd("C:/Users/spand/Downloads/")
+data <- read.csv("FlightDelays.csv")
+summary(data)
+
+```
+
+```{r}
+
+colnames(data) <- trimws(colnames(data))
+  comparison <- data
+  table(data$DAY_WEEK,data$DISTANCE)
+
+  
+```
+
+
+
+```{r}
+plot(data$DAY_WEEK,data$DISTANCE)
+```
+
+
+
+```{r}
+
+colnames(data) <- trimws(colnames(data))
+  comparison <- data
+  table(data$Flight.Status,data$DAY_WEEK)
+
+  
+```
+
+
+```{r}
+  
+
+barplot(table(data$Flight.Status,data$DAY_WEEK), xlab = 'data$DAY_WEEK',
+ylab = 'data$Flight.Status', beside = TRUE, legend = TRUE, col = c("skyblue", "pink"))
+
+
+```
